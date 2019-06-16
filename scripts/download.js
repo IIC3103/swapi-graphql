@@ -45,9 +45,81 @@ async function cacheResources() {
         cache[normalizeUrl(obj.url)] = obj;
       }
 
+      if(name === 'films') {
+        var integraFilm = { 
+          title: 'Taller de Integración',
+          episode_id: 12,
+          opening_crawl:
+           'El final de semestre está al acecho. Los estudiantes luchan por sacar adelante\r\nlos últimos trabajos del semestre para salvar la nota\r\nincluyendo la tarea 3 de Taller de Integración...',
+          director: 'El profesor',
+          producer: 'Los ayudantes',
+          release_date: '2019-06-16',
+          characters: ['https://swapi.co/api/people/90/', 'https://swapi.co/api/people/91/'],
+          planets:
+           [],
+          starships:
+           [],
+          vehicles:
+           [],
+          species:
+           [],
+          created: '2014-12-12T11:26:24.656000Z',
+          edited: '2017-04-19T10:57:29.544256Z',
+          url: 'https://swapi.co/api/films/15/' 
+        }
+
+        cache[normalizeUrl(integraFilm.url)] = integraFilm;
+      }
+
+      else if(name === 'people') {
+        var prof = { 
+          name: 'El profesor',
+          height: '183',
+          mass: '80',
+          hair_color: 'black',
+          skin_color: 'light',
+          eye_color: 'brown',
+          birth_year: '24BBY',
+          gender: 'male',
+          homeworld: 'https://swapi.co/api/planets/1/',
+          films: [ 'https://swapi.co/api/films/15/' ],
+          species: [ 'https://swapi.co/api/species/1/' ],
+          vehicles: [],
+          starships: [ 'https://swapi.co/api/starships/9/' ],
+          created: '2014-12-10T15:59:50.509000Z',
+          edited: '2014-12-20T21:17:50.323000Z',
+          url: 'https://swapi.co/api/people/90/' 
+        }
+
+        var a1 = { 
+          name: 'El ayudante',
+          height: '193',
+          mass: '70',
+          hair_color: 'black',
+          skin_color: 'light',
+          eye_color: 'brown',
+          birth_year: '24BBY',
+          gender: 'male',
+          homeworld: 'https://swapi.co/api/planets/1/',
+          films: [ 'https://swapi.co/api/films/15/' ],
+          species: [ 'https://swapi.co/api/species/1/' ],
+          vehicles: [],
+          starships: [ 'https://swapi.co/api/starships/9/' ],
+          created: '2014-12-10T15:59:50.509000Z',
+          edited: '2014-12-20T21:17:50.323000Z',
+          url: 'https://swapi.co/api/people/91/' 
+        }
+
+        cache[normalizeUrl(prof.url)] = prof;
+        cache[normalizeUrl(a1.url)] = a1;
+      }
+
       url = data.next;
     }
+    
   }
+
+
 
   return cache;
 }
