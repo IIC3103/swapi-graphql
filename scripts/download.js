@@ -32,11 +32,11 @@ const integraFilm = {
   planets:
    [],
   starships:
-   [],
+   ['https://swapi.co/api/starships/9/'],
   vehicles:
    [],
   species:
-   [],
+   ['https://swapi.co/api/species/1/'],
   created: '2014-12-12T11:26:24.656000Z',
   edited: '2017-04-19T10:57:29.544256Z',
   url: 'https://swapi.co/api/films/15/' 
@@ -49,7 +49,7 @@ const prof = {
   hair_color: 'black',
   skin_color: 'light',
   eye_color: 'brown',
-  birth_year: '24BBY',
+  birth_year: '28BBY',
   gender: 'male',
   homeworld: 'https://swapi.co/api/planets/1/',
   films: [ integraFilm.url ],
